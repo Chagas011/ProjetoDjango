@@ -4,6 +4,6 @@ from django.shortcuts import render
 
 
 def home(request):
-    return render(request, 'recipes/index.html', context={ 
-        'name': 'washington'
+    return render(request, 'recipes/pages/index.html', context={ 
+        'name': 'Washington'
     })
