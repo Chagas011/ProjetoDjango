@@ -1,22 +1,12 @@
-{% include 'recipes/partials/_head.html' %}
+{% extends 'global/base.html' %}
 
-<body>
-    {% include 'recipes/partials/_header.html' %}
-
-    {% include 'recipes/partials/_search.html' %}
-
-    <main class="main-content-container">
-        <div class="main-content main-content-list container">
-            <div class="recipe recipe-list-item">
-                <div class="recipe-cover">
-                    <img src="https://via.placeholder.com/1280x720" alt="">
-                </div>
-            </div>
-        </div>
-
-
-
-
-    </main>
-</body>
-</html> 
+{% block title %}
+    Home |
+{% endblock title %}
+{% block conteudo %}
+<div class="main-content main-content-list container">
+    {% for recipe in recipes %}
+        {% include 'recipes/partials/_cards.html'%}
+    {% endfor %}
+</div>
+{% endblock conteudo %}

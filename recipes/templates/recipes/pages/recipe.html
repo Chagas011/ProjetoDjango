@@ -1,0 +1,12 @@
+{% extends 'global/base.html' %}
+
+{% block title %}
+    RECIPE |
+{% endblock title %}
+
+
+{% block conteudo %}
+<div class="main-content main-content-detail container">
+    {% include 'recipes/partials/_cards.html'%}
+</div>
+{% endblock conteudo %}
