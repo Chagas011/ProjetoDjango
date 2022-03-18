@@ -148,7 +148,7 @@ h1, h2, h3, h4, h5 {
 
 .recipe img { 
     max-width: 100%;
-    
+
 }
 
 .recipe-list-item {
@@ -263,3 +263,14 @@ h1, h2, h3, h4, h5 {
     box-shadow: -5px 5px 5px rgba(0, 0, 0, .2);
 
 }
+
+.preparation-steps h1, 
+.preparation-steps h2, 
+.preparation-steps h3, 
+.preparation-steps ol, 
+.preparation-steps ul, 
+.preparation-steps pre { 
+    margin: 2rem 0;
+}
+
+

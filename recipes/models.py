@@ -10,10 +10,11 @@ class Category(models.Model):
     def __str__(self) -> str:
         return self.name
 
+
 class Recipe(models.Model):
     title = models.CharField(max_length=65)
     description = models.CharField(max_length=165)
-    slug = models.SlugField()
+    slug = models.SlugField(blank=True)
     preparation_time = models.IntegerField() 
     preparation_time_unit = models.CharField(max_length=65)
     servings = models.IntegerField()
@@ -25,10 +26,12 @@ class Recipe(models.Model):
     is_publish = models.BooleanField(default=False)
     cover = models.ImageField(upload_to='recipes/covers/%Y/%m/%d/')
     category = models.ForeignKey(
-        Category, on_delete=models.SET_NULL, null=True)
+        Category, on_delete=models.SET_NULL, null=True, blank=True,
+        default=None)
 
     author = models.ForeignKey(
-        User, on_delete=models.SET_NULL, null=True)
+        User, on_delete=models.SET_NULL, null=True, blank=True, 
+        default=None)
 
     def __str__(self) -> str:
         return self.title
