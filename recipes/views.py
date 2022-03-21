@@ -4,9 +4,9 @@ from .models import Recipe
 
 
 def home(request):
-    recipes = get_list_or_404(Recipe.objects.filter(
+    recipes = Recipe.objects.filter(
         is_publish=True
-    ).order_by('-id'))
+    ).order_by('-id')
 
     return render(request, 'recipes/pages/index.html',  context={'recipes': recipes})  # noqa: E501
 
@@ -28,3 +28,7 @@ def recipe(request, id):
         'recipe': recipe,
         'is_detail_page': True,
     })
+
+
+def search(request):
+    return render(request, 'recipes/pages/search.html')
