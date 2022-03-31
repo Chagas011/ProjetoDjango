@@ -11,10 +11,10 @@ fake = Faker('pt_BR')
 # print(signature(fake.random_number))
 
 
-def make_recipe():
+def make_recipes():
     return {
         'id': fake.random_number(digits=2, fix_len=True),
-        'title': fake.sentence(nb_words=6),
+        'title': 'This is a detail page',
         'description': fake.sentence(nb_words=12),
         'preparation_time': fake.random_number(digits=2, fix_len=True),
         'preparation_time_unit': 'Minutos',
@@ -37,4 +37,4 @@ def make_recipe():
 
 if __name__ == '__main__':
     from pprint import pprint
-    pprint(make_recipe())
+    pprint(make_recipes())
