@@ -4,7 +4,10 @@
     Home |
 {% endblock title %}
 {% block conteudo %}
+
+{% include 'recipes/partials/_messages.html' %}
 <div class="main-content main-content-list container">
+
     {% for recipe in recipes %}
         {% include 'recipes/partials/_cards.html'%}
     

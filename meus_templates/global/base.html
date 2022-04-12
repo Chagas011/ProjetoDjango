@@ -15,8 +15,10 @@
 
     <main class="main-content-container">
         {% block conteudo %}{% endblock conteudo %}
+        {% include 'recipes/partials/_pagination.html' %}
+        
     </main>
-
+    
     {% include 'recipes/partials/_footer.html' %}
 </body>
 </html> 
