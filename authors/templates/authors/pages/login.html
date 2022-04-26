@@ -1,0 +1,20 @@
+{% extends 'global/base.html' %}
+
+{% block title %}Login |{% endblock title %}
+
+{% block conteudo %}
+    <div class="main-content center container">
+        <h2>Login {{request.session.number}}</h2>
+        {% if request.user.is_authenticated %}
+            <p>Voce esta logado em {{request.user.username}}</p>
+            Please, <a href="{% url 'authors:logout' %}">Click here</a> to logout
+
+        {% else %}
+            <p> <a href="{% url 'authors:register' %}">Clique aqui</a>  para se cadastrar</p>
+        {% endif %}
+    </div>
+
+    {% include 'global/partials/_messages.html' %}
+
+    {% include 'global/partials/_formulario.html' %}
+{% endblock conteudo %}
