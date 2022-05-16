@@ -22,7 +22,8 @@ class RecipeBaseTest(StaticLiveServerTestCase):
 class RecipeHomeTest(RecipeBaseTest):
 
     def test_recipe_home(self):
+
         self.browser.get(self.live_server_url)
-        self.sleep(seconds=2)
+        self.sleep()
         body = self.browser.find_element(By.TAG_NAME, 'body')
         self.assertIn('No recipes found here 🥲', body.text)

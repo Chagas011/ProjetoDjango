@@ -1,6 +1,8 @@
 from unittest import skip
+
 from django.urls import resolve, reverse
 from recipes import views
+
 from .teste_base import RecipeTestBase
 
 
@@ -59,7 +61,7 @@ class RecipeViews(RecipeTestBase):
         self.assertEqual(response.status_code, 404)
 
 
-@skip('fail')
+@skip('faul')
 class CategoryViews(RecipeTestBase):
     def test_recipe_category_template_loads_recipes(self):
         needed_title = 'This is a category test'

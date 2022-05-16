@@ -5,18 +5,7 @@
 {% block conteudo %}
     <div class="main-content center container">
         <h2>Login {{request.session.number}}</h2>
-        {% if request.user.is_authenticated %}
-            <p>Voce esta logado em {{request.user.username}}</p>
-            Please, <form class="inline-form" action="{% url 'authors:logout' %}" method='POST'>
-                {% csrf_token %}
-                <input type="hidden" name="username" value="{{request.user.username}}">
-                <button class="plaintext-button" type="submit"> Click here </button>
-                
-            </form>  to logout
-
-        {% else %}
-            <p> <a href="{% url 'authors:register' %}">Clique aqui</a>  para se cadastrar</p>
-        {% endif %}
+    {% include 'authors/partials/login_messages.html' %}
     </div>
 
     {% include 'global/partials/_messages.html' %}

@@ -1,0 +1,34 @@
+{% extends 'global/base.html' %}
+
+{% block title %}Dashboard |({{user}}){% endblock title %}
+
+{% block conteudo %}
+    <div class="main-content center container">
+        <h2>Dashboard ({{user}}){{request.session.number}}</h2>
+        {% include 'authors/partials/login_messages.html' %}
+
+
+        <div class="author-dashboard-container">
+            <h3>Your recipes</h3>
+
+            <ul>
+                {% for recipe in recipes %}
+                    <li>
+                        <a href="{% url 'authors:dashboard_recipe' recipe.id%}">{{recipe.title}}</a>
+                    </li>
+                    {% empty %}
+                        <li>
+                            <p>
+                                You do not have recipes
+                            </p>
+                        </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+    
+
+    {% include 'global/partials/_messages.html' %}
+
+{% endblock conteudo %}

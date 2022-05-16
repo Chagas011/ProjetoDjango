@@ -1,0 +1,21 @@
+{% extends 'global/base.html' %}
+
+{% block title %}Dashboard Recipe{% endblock title %}
+
+{% block conteudo %}
+    <div class="main-content center container">
+        <h2>Dashboard Recipe{{request.session.number}}</h2>
+        {% include 'global/partials/_messages.html' %}
+        {% include 'authors/partials/login_messages.html' %}
+        
+        <div class="author-dashboard-container ">
+            {% include 'global/partials/_formulario.html' %}
+        </div>
+
+        
+    </div>
+    
+
+    
+
+{% endblock conteudo %}
